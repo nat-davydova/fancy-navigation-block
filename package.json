@@ -1,6 +1,6 @@
 {
   "name": "fancy-navigation-block",
-  "version": "2022.1.4-12.3.36",
+  "version": "2022.1.4-12.24.1",
   "private": true,
   "license": "UNLICENSED",
   "homepage": "https://codepen.io/nat-davydova/pen/zYPBRbm/d8b8c3116501e5bb23f491b5af3bc2e9",
@@ -25,6 +25,8 @@
     "webpack-dev-server": "^3.2.1",
     "gulp-inject-partials": "^1.0.5",
     "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0",
     "gulp-autoprefixer": "^6.1.0"
   },
   "tasks": {
@@ -67,6 +69,18 @@
       "rename": {
         "suffix": ".partial"
       },
+      "cleanup": true
+    },
+    "sass": {
+      "src": [
+        "**/*.sass",
+        "**/*.scss"
+      ],
+      "pipe": [
+        {
+          "require": "gulp-sass"
+        }
+      ],
       "cleanup": true
     },
     "autoprefixer": {
