@@ -53,6 +53,20 @@
   line-height: 2rem;
 }
 
+.fancy-nav__description {
+  color: #fff;
+  line-height: 1.5rem;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.fancy-nav__description p {
+  margin: 0;
+}
+
 .fancy-nav__item:hover:nth-child(1) .fancy-nav__item-details {
   background-color: #304949;
 }
