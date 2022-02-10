@@ -44,6 +44,7 @@
   width: 100%;
   padding: 40px;
   box-sizing: border-box;
+  transform: translateY(80px);
 }
 
 .fancy-nav__title {
@@ -62,11 +63,16 @@
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
+  transform: translateY(20px);
+  transform-origin: top center;
 }
 .fancy-nav__description p {
   margin: 0;
 }
 
+.fancy-nav__item:hover .fancy-nav__item-details {
+  transform: translateY(0);
+}
 .fancy-nav__item:hover:nth-child(1) .fancy-nav__item-details {
   background-color: #304949;
 }
@@ -78,4 +84,11 @@
 }
 .fancy-nav__item:hover:nth-child(4) .fancy-nav__item-details {
   background-color: #5c7450;
+}
+.fancy-nav__item:hover .fancy-nav__description {
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0.1s;
+  transform: translateY(0);
 }

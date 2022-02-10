@@ -87,6 +87,7 @@ $bg-color--accent4: $__moss-green;
   width: 100%;
   padding: 40px;
   box-sizing: border-box;
+  transform: translateY(80px);
 }
 
 .fancy-nav__title {
@@ -105,6 +106,8 @@ $bg-color--accent4: $__moss-green;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
+  transform: translateY(20px);
+  transform-origin: top center;
 
   & p {
     margin: 0;
@@ -112,6 +115,10 @@ $bg-color--accent4: $__moss-green;
 }
 
 .fancy-nav__item:hover {
+  .fancy-nav__item-details {
+    transform: translateY(0);
+  }
+
   &:nth-child(1) {
     .fancy-nav__item-details {
       background-color: $bg-color--accent1;
@@ -134,5 +141,10 @@ $bg-color--accent4: $__moss-green;
     .fancy-nav__item-details {
       background-color: $bg-color--accent4;
     }
+  }
+
+  .fancy-nav__description {
+    @include transition-mix($property: transform, $delay: 0.1s);
+    transform: translateY(0);
   }
 }
