@@ -22,14 +22,15 @@
 
 // _________ VARIABLES ___________
 $__white: #fff;
-
 $__slate-grey: #304949;
+$__saddle-brown: #954722;
 
 $font-color--light: $__white;
 
 $border-color--light: $__white;
 
 $bg-color--accent1: $__slate-grey;
+$bg-color--accent2: $__saddle-brown;
 
 // _________ STYLES ___________
 .fancy-nav {
@@ -37,7 +38,9 @@ $bg-color--accent1: $__slate-grey;
   width: 100%;
   height: 100vh;
   font-family: "Roboto", sans-serif;
-  background: url(https://assets.codepen.io/3341051/interior1.jpg) 50% 0
+  // background: url(https://assets.codepen.io/3341051/interior1.jpg) 50% 0
+  //   no-repeat;
+  background: url(https://assets.codepen.io/3341051/interior2.jpg) 50% 0
     no-repeat;
   background-size: cover;
 
@@ -89,6 +92,12 @@ $bg-color--accent1: $__slate-grey;
   &:nth-child(1) {
     .fancy-nav__item-details {
       background-color: $bg-color--accent1;
+    }
+  }
+
+  &:nth-child(2) {
+    .fancy-nav__item-details {
+      background-color: $bg-color--accent2;
     }
   }
 }

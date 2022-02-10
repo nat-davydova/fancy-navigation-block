@@ -3,7 +3,7 @@
   width: 100%;
   height: 100vh;
   font-family: "Roboto", sans-serif;
-  background: url(https://assets.codepen.io/3341051/interior1.jpg) 50% 0 no-repeat;
+  background: url(https://assets.codepen.io/3341051/interior2.jpg) 50% 0 no-repeat;
   background-size: cover;
 }
 .fancy-nav:after {
@@ -55,4 +55,7 @@
 
 .fancy-nav__item:hover:nth-child(1) .fancy-nav__item-details {
   background-color: #304949;
+}
+.fancy-nav__item:hover:nth-child(2) .fancy-nav__item-details {
+  background-color: #954722;
 }
