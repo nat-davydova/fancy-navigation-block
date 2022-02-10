@@ -24,6 +24,7 @@
 $__white: #fff;
 $__slate-grey: #304949;
 $__saddle-brown: #954722;
+$__magenta-pink: #ca4985;
 
 $font-color--light: $__white;
 
@@ -31,6 +32,7 @@ $border-color--light: $__white;
 
 $bg-color--accent1: $__slate-grey;
 $bg-color--accent2: $__saddle-brown;
+$bg-color--accent3: $__magenta-pink;
 
 // _________ STYLES ___________
 .fancy-nav {
@@ -40,7 +42,9 @@ $bg-color--accent2: $__saddle-brown;
   font-family: "Roboto", sans-serif;
   // background: url(https://assets.codepen.io/3341051/interior1.jpg) 50% 0
   //   no-repeat;
-  background: url(https://assets.codepen.io/3341051/interior2.jpg) 50% 0
+  // background: url(https://assets.codepen.io/3341051/interior2.jpg) 50% 0
+  //   no-repeat;
+  background: url(https://assets.codepen.io/3341051/interior3.jpg) 50% 0
     no-repeat;
   background-size: cover;
 
@@ -98,6 +102,12 @@ $bg-color--accent2: $__saddle-brown;
   &:nth-child(2) {
     .fancy-nav__item-details {
       background-color: $bg-color--accent2;
+    }
+  }
+
+  &:nth-child(3) {
+    .fancy-nav__item-details {
+      background-color: $bg-color--accent3;
     }
   }
 }
