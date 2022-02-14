@@ -88,8 +88,10 @@ $bg-color--accent4: $__moss-green;
 .fancy-nav__item {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 50%;
   align-items: flex-end;
-  width: 25%;
   overflow: hidden;
 
   &:not(:last-child) {
@@ -116,6 +118,7 @@ $bg-color--accent4: $__moss-green;
   color: $font-color--light;
   line-height: 1.5rem;
   display: -webkit-box;
+  min-height: 48px;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
@@ -161,5 +164,12 @@ $bg-color--accent4: $__moss-green;
   .fancy-nav__description {
     @include transition-mix($property: transform, $delay: 0.1s);
     transform: translateY(0);
+  }
+}
+
+@media (min-width: 1400px) {
+  .fancy-nav__item {
+    width: 25%;
+    height: 100%;
   }
 }
