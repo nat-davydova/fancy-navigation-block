@@ -62,11 +62,11 @@ $bg-color--accent4: $__moss-green;
 
 .fancy-nav__img {
   @include position-absolute($left: 0, $top: 0);
+  @include transition-mix($property: opacity);
   width: 100%;
   height: 100%;
 
   &:not(:first-child) {
-    @include transition-mix($property: opacity);
     opacity: 0;
   }
 
