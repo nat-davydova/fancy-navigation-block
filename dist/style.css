@@ -51,19 +51,21 @@
   display: flex;
   height: 100%;
   z-index: 2;
+  flex-wrap: wrap;
 }
 
 .fancy-nav__item {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 25%;
+  flex-shrink: 0;
   align-items: flex-end;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .fancy-nav__item:not(:last-child) {
-  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
 }
 
 .fancy-nav__item-details {
@@ -72,27 +74,28 @@
   transition-timing-function: linear;
   transition-delay: 0s;
   width: 100%;
-  padding: 40px;
+  padding: 20px;
   box-sizing: border-box;
-  transform: translateY(80px);
+  transform: translateY(50px);
 }
 
 .fancy-nav__title {
+  margin-top: 0;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  line-height: 2rem;
+  line-height: 1.2rem;
+  font-size: 1rem;
 }
 
 .fancy-nav__description {
   color: #fff;
   line-height: 1.5rem;
   display: -webkit-box;
-  min-height: 48px;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
   transform: translateY(20px);
   transform-origin: top center;
@@ -124,9 +127,46 @@
   transform: translateY(0);
 }
 
+@media (min-width: 750px) {
+  .fancy-nav__item {
+    width: 50%;
+    height: 50%;
+  }
+  .fancy-nav__item:not(:nth-child(2n)) {
+    border-right: 2px solid #fff;
+  }
+  .fancy-nav__item:last-child, .fancy-nav__item:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  .fancy-nav__item-details {
+    transform: translateY(80px);
+  }
+
+  .fancy-nav__title {
+    line-height: 2rem;
+    font-size: 1.17rem;
+  }
+
+  .fancy-nav__description {
+    min-height: 48px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+}
 @media (min-width: 1400px) {
   .fancy-nav__item {
     width: 25%;
     height: 100%;
+  }
+  .fancy-nav__item:not(:last-child) {
+    border-right: 2px solid #fff;
+  }
+  .fancy-nav__item:not(:nth-last-child(-n+2)) {
+    border-bottom: none;
+  }
+
+  .fancy-nav__item-details {
+    padding: 40px;
   }
 }
