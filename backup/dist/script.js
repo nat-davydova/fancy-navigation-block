@@ -3,10 +3,10 @@ const DOM = {
   itemList: ".fancy-nav__list",
   images: ".fancy-nav__img"
 };
-const itemList = document.querySelector(DOM.itemList);
+const fancyItemList = document.querySelector(DOM.itemList);
+const fancyItems = document.querySelectorAll(DOM.item);
 
 function getCurrentItemIndex(item) {
-  const fancyItems = document.querySelectorAll(DOM.item);
   const currentIndex = Array.from(fancyItems).indexOf(item);
 
   return currentIndex;
@@ -24,7 +24,7 @@ function changeMainImage(currentIndex) {
   });
 }
 
-itemList.addEventListener("mouseover", (event) => {
+fancyItemList.addEventListener("mouseover", (event) => {
   const target = event.target;
 
   if (target.closest(DOM.item)) {

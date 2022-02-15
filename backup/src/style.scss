@@ -42,6 +42,7 @@ $bg-color--accent4: $__moss-green;
   width: 100%;
   height: 100vh;
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 
   &:after {
     @include position-absolute($top: 0, $left: 0);
@@ -93,7 +94,6 @@ $bg-color--accent4: $__moss-green;
   height: 25%;
   flex-shrink: 0;
   align-items: flex-end;
-  overflow: hidden;
   box-sizing: border-box;
 
   &:not(:last-child) {
@@ -218,5 +218,9 @@ $bg-color--accent4: $__moss-green;
 
   .fancy-nav__item-details {
     padding: 40px;
+  }
+
+  .active {
+    
   }
 }
