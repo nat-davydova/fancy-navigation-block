@@ -31,6 +31,7 @@ $font-color--light: $__white;
 
 $border-color--light: $__white;
 
+$bg-color--light: $__white;
 $bg-color--accent1: $__slate-grey;
 $bg-color--accent2: $__saddle-brown;
 $bg-color--accent3: $__magenta-pink;
@@ -109,14 +110,23 @@ $bg-color--accent4: $__moss-green;
   transform: translateY(50px);
 }
 
-.fancy-nav__title {
+.fancy-nav__title,
+.fancy-nav__tab-title {
   margin-top: 0;
-  color: $font-color--light;
+
   text-transform: uppercase;
   letter-spacing: 1.5px;
 
   line-height: 1.2rem;
   font-size: 1rem;
+}
+
+.fancy-nav__title {
+  color: $font-color--light;
+}
+
+.fancy-nav__tab-title {
+  font-size: 2rem;
 }
 
 .fancy-nav__description {
@@ -171,6 +181,61 @@ $bg-color--accent4: $__moss-green;
   }
 }
 
+.fancy-nav__tabs {
+  @include position-absolute($top: 0, $left: 0);
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.fancy-nav__tab {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+
+  &:nth-child(1) {
+    background-color: $bg-color--accent1;
+  }
+}
+
+.fancy-nav__tab-img {
+  position: relative;
+  height: 400px;
+  
+  &:after {
+    @include position-absolute($top: 0, $left: 0);
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.fancy-nav__tab-description {
+  position: relative;
+  top: -80px;
+  width: 90%;
+  padding: 40px;
+  margin: auto;
+  background-color: $bg-color--light;
+  box-sizing: border-box;
+  z-index: 6;
+}
+
+.fancy-nav__tab-content {
+  line-height: 1.5rem;
+}
+
 @media (min-width: 750px) {
   .fancy-nav__item {
     width: 50%;
@@ -218,9 +283,5 @@ $bg-color--accent4: $__moss-green;
 
   .fancy-nav__item-details {
     padding: 40px;
-  }
-
-  .active {
-    
   }
 }
