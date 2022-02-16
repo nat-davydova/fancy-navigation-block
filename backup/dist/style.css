@@ -192,6 +192,41 @@
   line-height: 1.5rem;
 }
 
+.fancy-nav__close-btn {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 40px;
+  padding: 0;
+  text-indent: -9999px;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+.fancy-nav__close-btn:before, .fancy-nav__close-btn:after {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 130%;
+  height: 5px;
+  content: "";
+  background-color: #fff;
+  border-radius: 5px;
+}
+.fancy-nav__close-btn:before {
+  left: 3px;
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+.fancy-nav__close-btn:after {
+  right: 3px;
+  transform: rotate(-45deg);
+  transform-origin: top right;
+}
+
 @media (min-width: 750px) {
   .fancy-nav__item {
     width: 50%;

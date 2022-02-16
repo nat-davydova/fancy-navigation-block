@@ -202,7 +202,7 @@ $bg-color--accent4: $__moss-green;
 .fancy-nav__tab-img {
   position: relative;
   height: 400px;
-  
+
   &:after {
     @include position-absolute($top: 0, $left: 0);
     display: block;
@@ -234,6 +234,44 @@ $bg-color--accent4: $__moss-green;
 
 .fancy-nav__tab-content {
   line-height: 1.5rem;
+}
+
+.fancy-nav__close-btn {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 40px;
+  padding: 0;
+  text-indent: -9999px;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    @include position-absolute($top: 0);
+    display: block;
+    width: 130%;
+    height: 5px;
+    content: "";
+    background-color: $bg-color--light;
+    border-radius: 5px;
+  }
+
+  &:before {
+    left: 3px;
+    transform: rotate(45deg);
+    transform-origin: top left;
+  }
+
+  &:after {
+    right: 3px;
+    transform: rotate(-45deg);
+    transform-origin: top right;
+  }
 }
 
 @media (min-width: 750px) {
