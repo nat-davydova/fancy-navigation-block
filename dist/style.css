@@ -156,7 +156,11 @@
   background-color: #304949;
 }
 .fancy-nav__tab:nth-child(2) {
+  display: none;
   background-color: #954722;
+}
+.fancy-nav__tab:nth-child(3) {
+  background-color: #ca4985;
 }
 
 .fancy-nav__tab-img {
