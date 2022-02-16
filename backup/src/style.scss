@@ -195,7 +195,12 @@ $bg-color--accent4: $__moss-green;
   box-sizing: border-box;
 
   &:nth-child(1) {
+    display: none;
     background-color: $bg-color--accent1;
+  }
+
+  &:nth-child(2) {
+    background-color: $bg-color--accent2;
   }
 }
 

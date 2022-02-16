@@ -151,7 +151,11 @@
   box-sizing: border-box;
 }
 .fancy-nav__tab:nth-child(1) {
+  display: none;
   background-color: #304949;
+}
+.fancy-nav__tab:nth-child(2) {
+  background-color: #954722;
 }
 
 .fancy-nav__tab-img {
