@@ -5,13 +5,14 @@ const DOM = {
   tabList: ".fancy-nav__tabs",
   tab: ".fancy-nav__tab",
   tabCloseBtn: ".fancy-nav__close-btn",
+  tabImg: ".fancy-nav__tab-img",
+  tabDescr: ".fancy-nav__tab-description",
   isVisible: "is-visible"
 };
 const fancyItemList = document.querySelector(DOM.itemList);
 const fancyItems = document.querySelectorAll(DOM.item);
 const fancyTabList = document.querySelector(DOM.tabList);
 const fancyTabs = document.querySelectorAll(DOM.tab);
-const fancyTabCloseBtn = document.querySelector(DOM.tabCloseBtn);
 
 function getCurrentElemIndex(list, item) {
   const currentIndex = Array.from(list).indexOf(item);
@@ -37,6 +38,18 @@ function openFancyTab(currentIndex) {
   const currentTab = fancyTabs[currentIndex];
 
   currentTab.classList.add(DOM.isVisible);
+
+  const currentTabCloseBtn = currentTab.querySelector(DOM.tabCloseBtn);
+
+  currentTabCloseBtn.classList.add(DOM.isVisible);
+
+  const currentTabImg = currentTab.querySelector(DOM.tabImg);
+
+  currentTabImg.classList.add(DOM.isVisible);
+
+  const currentTabDescr = currentTab.querySelector(DOM.tabDescr);
+
+  currentTabDescr.classList.add(DOM.isVisible);
 }
 
 function closeFancyTab(currentIndex) {
@@ -45,6 +58,18 @@ function closeFancyTab(currentIndex) {
   const currentTab = fancyTabs[currentIndex];
 
   currentTab.classList.remove(DOM.isVisible);
+
+  const currentTabCloseBtn = currentTab.querySelector(DOM.tabCloseBtn);
+
+  currentTabCloseBtn.classList.remove(DOM.isVisible);
+
+  const currentTabImg = currentTab.querySelector(DOM.tabImg);
+
+  currentTabImg.classList.remove(DOM.isVisible);
+
+  const currentTabDescr = currentTab.querySelector(DOM.tabDescr);
+
+  currentTabDescr.classList.remove(DOM.isVisible);
 }
 
 fancyItemList.addEventListener("mouseover", (event) => {
