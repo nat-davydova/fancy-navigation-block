@@ -4,7 +4,8 @@ const DOM = {
   images: ".fancy-nav__img",
   tabList: ".fancy-nav__tabs",
   tab: ".fancy-nav__tab",
-  tabCloseBtn: ".fancy-nav__close-btn"
+  tabCloseBtn: ".fancy-nav__close-btn",
+  isVisible: "is-visible"
 };
 const fancyItemList = document.querySelector(DOM.itemList);
 const fancyItems = document.querySelectorAll(DOM.item);
@@ -31,19 +32,19 @@ function changeMainImage(currentIndex) {
 }
 
 function openFancyTab(currentIndex) {
-  fancyTabList.classList.add("is-visible");
+  fancyTabList.classList.add(DOM.isVisible);
 
   const currentTab = fancyTabs[currentIndex];
 
-  currentTab.classList.add("is-visible");
+  currentTab.classList.add(DOM.isVisible);
 }
 
 function closeFancyTab(currentIndex) {
-  fancyTabList.classList.remove("is-visible");
+  fancyTabList.classList.remove(DOM.isVisible);
 
   const currentTab = fancyTabs[currentIndex];
 
-  currentTab.classList.remove("is-visible");
+  currentTab.classList.remove(DOM.isVisible);
 }
 
 fancyItemList.addEventListener("mouseover", (event) => {
