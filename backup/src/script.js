@@ -12,8 +12,8 @@ const fancyTabList = document.querySelector(DOM.tabList);
 const fancyTabs = document.querySelectorAll(DOM.tab);
 const fancyTabCloseBtn = document.querySelector(DOM.tabCloseBtn);
 
-function getCurrentItemIndex(item) {
-  const currentIndex = Array.from(fancyItems).indexOf(item);
+function getCurrentElemIndex(list, item) {
+  const currentIndex = Array.from(list).indexOf(item);
 
   return currentIndex;
 }
@@ -38,19 +38,22 @@ function openFancyTab(currentIndex) {
   currentTab.classList.add("is-visible");
 }
 
-function closeFancyTab() {
-  console.log("wow");
-
+function closeFancyTab(currentIndex) {
   fancyTabList.classList.remove("is-visible");
 
-  Array.from(fancyTabs).forEach((elem) => elem.classList.remove("is-visible"));
+  const currentTab = fancyTabs[currentIndex];
+
+  currentTab.classList.remove("is-visible");
 }
 
 fancyItemList.addEventListener("mouseover", (event) => {
   const target = event.target;
 
   if (target.closest(DOM.item)) {
-    const currentFancyItemIndex = getCurrentItemIndex(target.closest(DOM.item));
+    const currentFancyItemIndex = getCurrentElemIndex(
+      fancyItems,
+      target.closest(DOM.item)
+    );
 
     changeMainImage(currentFancyItemIndex);
   }
@@ -60,12 +63,24 @@ fancyItemList.addEventListener("click", (event) => {
   const target = event.target;
 
   if (target.closest(DOM.item)) {
-    const currentFancyItemIndex = getCurrentItemIndex(target.closest(DOM.item));
+    const currentFancyItemIndex = getCurrentElemIndex(
+      fancyItems,
+      target.closest(DOM.item)
+    );
 
     openFancyTab(currentFancyItemIndex);
   }
 });
 
-fancyTabCloseBtn.addEventListener("click", () => {
-  closeFancyTab();
+fancyTabList.addEventListener("click", (event) => {
+  const target = event.target;
+
+  if (target.closest(DOM.tabCloseBtn)) {
+    const currentFancyItemIndex = getCurrentElemIndex(
+      fancyTabs,
+      target.closest(DOM.tab)
+    );
+
+    closeFancyTab(currentFancyItemIndex);
+  }
 });
