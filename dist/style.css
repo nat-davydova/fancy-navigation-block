@@ -180,6 +180,10 @@
   opacity: 1;
   visibility: visible;
 }
+.fancy-nav__tab.is-visible .fancy-nav__tab-img {
+  transform: scale(1);
+  opacity: 1;
+}
 
 .fancy-nav__tab-container {
   width: 100%;
@@ -188,6 +192,10 @@
 }
 
 .fancy-nav__tab-img {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0.3s;
   position: relative;
   height: 250px;
 }
@@ -292,6 +300,8 @@
 
   .fancy-nav__tab-img {
     height: 400px;
+    transform: scale(0.7);
+    opacity: 0;
   }
 
   .fancy-nav__tab-title {

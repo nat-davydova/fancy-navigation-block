@@ -223,6 +223,11 @@ $bg-color--accent4: $__moss-green;
   &.is-visible {
     opacity: 1;
     visibility: visible;
+
+    .fancy-nav__tab-img {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }
 
@@ -233,6 +238,7 @@ $bg-color--accent4: $__moss-green;
 }
 
 .fancy-nav__tab-img {
+  @include transition-mix($delay: 0.3s);
   position: relative;
   height: 250px;
 
@@ -342,6 +348,8 @@ $bg-color--accent4: $__moss-green;
 
   .fancy-nav__tab-img {
     height: 400px;
+    transform: scale(0.7);
+    opacity: 0;
   }
 
   .fancy-nav__tab-title {
