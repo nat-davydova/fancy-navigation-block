@@ -246,13 +246,6 @@ $bg-color--accent4: $__moss-green;
     z-index: 1;
   }
 
-  &.is-visible {
-    @include transition-mix($delay: 0.2s);
-    transform: scale(1);
-    opacity: 1;
-    visibility: visible;
-  }
-
   img {
     display: block;
     width: 100%;
@@ -268,13 +261,6 @@ $bg-color--accent4: $__moss-green;
   background-color: $bg-color--light;
   box-sizing: border-box;
   z-index: 6;
-
-  &.is-visible {
-    @include transition-mix($delay: 0.4s);
-    transform: translateY(-80px);
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
 .fancy-nav__tab-content {
@@ -317,13 +303,6 @@ $bg-color--accent4: $__moss-green;
     transform: rotate(-45deg);
     transform-origin: top right;
   }
-
-  &.is-visible {
-    @include transition-mix($delay: 0.2s);
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
 @media (min-width: 750px) {
@@ -360,12 +339,26 @@ $bg-color--accent4: $__moss-green;
     width: 90%;
     padding: 25px;
     transform: translateY(-40px);
+
+    &.is-visible {
+      @include transition-mix($delay: 0.4s);
+      transform: translateY(-80px);
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   .fancy-nav__tab-img {
     height: 400px;
     transform: scale(0.7);
     opacity: 0;
+
+    &.is-visible {
+      @include transition-mix($delay: 0.2s);
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   .fancy-nav__tab-title {
@@ -391,6 +384,13 @@ $bg-color--accent4: $__moss-green;
 
     &:before {
       left: 3px;
+    }
+
+    &.is-visible {
+      @include transition-mix($delay: 0.2s);
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
