@@ -149,10 +149,6 @@
 }
 
 .fancy-nav__tab {
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-  transition-delay: 0s;
   position: absolute;
   top: 0;
   left: 0;
@@ -177,19 +173,12 @@
   background-color: #5c7450;
 }
 .fancy-nav__tab.is-visible {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
   opacity: 1;
   visibility: visible;
-}
-.fancy-nav__tab.is-visible .fancy-nav__tab-img {
-  transform: scale(1);
-  opacity: 1;
-}
-.fancy-nav__tab.is-visible .fancy-nav__close-btn {
-  transform: translateY(0);
-  opacity: 1;
-}
-.fancy-nav__tab.is-visible .fancy-nav__tab-description {
-  transform: translateY(-80px);
 }
 
 .fancy-nav__tab-container {
@@ -199,10 +188,6 @@
 }
 
 .fancy-nav__tab-img {
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-  transition-delay: 0.2s;
   position: relative;
   height: 250px;
 }
@@ -217,6 +202,15 @@
   background-color: rgba(0, 0, 0, 0.35);
   z-index: 1;
 }
+.fancy-nav__tab-img.is-visible {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0.2s;
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
 .fancy-nav__tab-img img {
   display: block;
   width: 100%;
@@ -226,10 +220,6 @@
 }
 
 .fancy-nav__tab-description {
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-  transition-delay: 0.4s;
   position: relative;
   padding: 15px;
   margin: auto;
@@ -237,16 +227,21 @@
   box-sizing: border-box;
   z-index: 6;
 }
+.fancy-nav__tab-description.is-visible {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0.4s;
+  transform: translateY(-80px);
+  opacity: 1;
+  visibility: visible;
+}
 
 .fancy-nav__tab-content {
   line-height: 1.5rem;
 }
 
 .fancy-nav__close-btn {
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-  transition-delay: 0.2s;
   position: relative;
   display: flex;
   margin-left: auto;
@@ -279,6 +274,15 @@
   right: 3px;
   transform: rotate(-45deg);
   transform-origin: top right;
+}
+.fancy-nav__close-btn.is-visible {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0.2s;
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (min-width: 750px) {
