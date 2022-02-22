@@ -1,9 +1,9 @@
 {
-  "name": "fancy-navigation-block-clickable",
-  "version": "2022.1.2-18.28.39",
-  "private": true,
-  "license": "UNLICENSED",
-  "homepage": "https://codepen.io/nat-davydova/pen/zYPBRbm/d8b8c3116501e5bb23f491b5af3bc2e9",
+  "name": "fancy-navigation-block-clickable-responsive",
+  "version": "2022.1.2-18.48.24",
+  "private": false,
+  "license": "MIT",
+  "homepage": "https://codepen.io/nat-davydova/pen/zYPBRbm",
   "scripts": {
     "build": "gulp -f ./build/gulpfile.js --cwd ./ --continue",
     "serve": "gulp serve -f ./build/gulpfile.js --cwd ./ --continue",
