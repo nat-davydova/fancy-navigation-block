@@ -1,3 +1,5 @@
+// https://github.com/nat-davydova/fancy-navigation-block
+
 const DOM = {
   item: ".fancy-nav__item",
   itemList: ".fancy-nav__list",
