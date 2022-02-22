@@ -23,10 +23,12 @@
 // _________ VARIABLES ___________
 $__white: #fff;
 $__slate-grey: #304949;
+$__dark-grey: #393838;
 $__saddle-brown: #954722;
 $__magenta-pink: #ca4985;
 $__moss-green: #5c7450;
 
+$font-color--default: $__dark-grey;
 $font-color--light: $__white;
 
 $border-color--light: $__white;
@@ -43,6 +45,7 @@ $bg-color--accent4: $__moss-green;
   width: 100%;
   height: 100vh;
   font-family: "Roboto", sans-serif;
+  color: $font-color--default;
   overflow: hidden;
 
   &:after {
@@ -306,12 +309,36 @@ $bg-color--accent4: $__moss-green;
 }
 
 .fancy-nav__more-btn {
+  position: relative;
   padding: 10px 25px;
   margin-top: 20px;
   color: $font-color--light;
   border: 1px solid $border-color--light;
   background-color: transparent;
+  box-sizing: border-box;
   cursor: pointer;
+
+  &:after {
+    @include position-absolute($top: 0, $left: 0);
+    @include transition-mix();
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    transform: translateZ(0) scaleY(0);
+    transform-origin: bottom center;
+    background-color: $bg-color--light;
+    z-index: -1;
+  }
+
+  &:hover {
+    @include transition-mix();
+    color: $font-color--default;
+
+    &:after {
+      transform: translateZ(0) scaleY(1);
+    }
+  }
 }
 
 @media (min-width: 750px) {
