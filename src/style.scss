@@ -112,7 +112,7 @@ $bg-color--accent4: $__moss-green;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  //transform: translateY(50px);
+  transform: translateY(50px);
 }
 
 .fancy-nav__title,
@@ -139,7 +139,7 @@ $bg-color--accent4: $__moss-green;
   -webkit-line-clamp: 1;
   line-clamp: 1;
   -webkit-box-orient: vertical;
-  //transform: translateY(20px);
+  transform: translateY(20px);
   transform-origin: top center;
 
   & p {
@@ -178,6 +178,15 @@ $bg-color--accent4: $__moss-green;
 
   .fancy-nav__description {
     @include transition-mix($property: transform, $delay: 0.1s);
+    transform: translateY(0);
+  }
+
+  .fancy-nav__more-btn {
+    @include transition-mix(
+      $property: transform,
+      $delay: 0.1s,
+      $timing: linear
+    );
     transform: translateY(0);
   }
 }
@@ -312,8 +321,13 @@ $bg-color--accent4: $__moss-green;
   position: relative;
   padding: 10px 25px;
   margin-top: 20px;
+  transform: translateY(30px);
+  font: {
+    weight: 700;
+    size: 1.1rem;
+  }
   color: $font-color--light;
-  border: 1px solid $border-color--light;
+  border: 2px solid $border-color--light;
   background-color: transparent;
   box-sizing: border-box;
   cursor: pointer;
@@ -327,12 +341,12 @@ $bg-color--accent4: $__moss-green;
     content: "";
     transform: translateZ(0) scaleY(0);
     transform-origin: bottom center;
+
     background-color: $bg-color--light;
     z-index: -1;
   }
 
   &:hover {
-    @include transition-mix();
     color: $font-color--default;
 
     &:after {
@@ -357,7 +371,7 @@ $bg-color--accent4: $__moss-green;
   }
 
   .fancy-nav__item-details {
-    //transform: translateY(80px);
+    transform: translateY(145px);
   }
 
   .fancy-nav__title {
